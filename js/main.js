@@ -4,13 +4,15 @@
 
 function init() {
     // code here.
-    var stage = new createjs.Stage("game_canvas");
-    var circle = new createjs.Shape();
-    circle.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, 50);
-    circle.x = 100;
-    circle.y = 100;
-    stage.addChild(circle);
-    stage.update();
+    while(1) {
+        var stage = new createjs.Stage("game_canvas");
+        var circle = new createjs.Shape();
+        circle.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, 50);
+        circle.x = 100;
+        circle.y = 100;
+        stage.addChild(circle);
+        stage.update();
+    }
 }
 
 function toggleFullScreen() {
@@ -22,20 +24,20 @@ function toggleFullScreen() {
 
             //document.documentElement.requestFullScreen();
             canvas.requestFullScreen();
-            canvas.width = $(window).width();
-            canvas.height = $(window).height();
+            canvas.width = document.body.clientWidth;
+            canvas.height = document.body.clientHeight;
 
         } else if (document.documentElement.mozRequestFullScreen)
         {
             canvas.mozRequestFullScreen();
-            canvas.width = $(window).width();
-            canvas.height = $(window).height();
+            canvas.width = document.body.clientWidth;
+            canvas.height = document.body.clientHeight;
 
         } else if (document.documentElement.webkitRequestFullScreen)
         {
             canvas.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-            canvas.width = $(window).width();
-            canvas.height = $(window).height();
+            canvas.width = document.body.clientWidth;
+            canvas.height = document.body.clientHeight;
         }
     } else {
         if (document.cancelFullScreen)
