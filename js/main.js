@@ -4,7 +4,9 @@
 
 function init() {
     // code here.
-
+    $('#toggle').click(function () {
+        screenfull.toggle($('#game_canvas')[0]);
+    });
 
     var stage = new createjs.Stage("game_canvas");
     var circle = new createjs.Shape();
@@ -15,6 +17,3 @@ function init() {
     stage.update();
 }
 
-$('#toggle').click(function () {
-    screenfull.toggle($('#game_canvas')[0]);
-});
