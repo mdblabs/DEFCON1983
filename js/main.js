@@ -26,18 +26,21 @@ function toggleFullScreen() {
             canvas.requestFullScreen();
             canvas.width = screen.width;
             canvas.height = screen.height;
+            alert(canvas.width);
 
         } else if (document.documentElement.mozRequestFullScreen)
         {
             canvas.mozRequestFullScreen();
             canvas.width = screen.width;
             canvas.height = screen.height;
+            alert(canvas.width);
 
         } else if (document.documentElement.webkitRequestFullScreen)
         {
             canvas.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
             canvas.width = screen.width;
             canvas.height = screen.height;
+            alert(canvas.width);
         }
     } else {
         if (document.cancelFullScreen)
@@ -45,16 +48,19 @@ function toggleFullScreen() {
             canvas.cancelFullScreen();
             canvas.width = 500;
             canvas.height = 375;
+            alert(canvas.width);
         } else if (document.mozCancelFullScreen)
         {
             canvas.mozCancelFullScreen();
             canvas.width = 500;
             canvas.height = 375;
+            alert(canvas.width);
         } else if (document.webkitCancelFullScreen)
         {
             canvas.webkitCancelFullScreen();
             canvas.width = 500;
             canvas.height = 375;
+            alert(canvas.width);
         }
     }
 }
