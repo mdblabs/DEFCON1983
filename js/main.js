@@ -25,7 +25,7 @@ function toggleFullScreen() {
             canvas.width = screen.width;
             canvas.height = screen.height;
             alert(canvas.width);
-            init();
+
 
         } else if (document.documentElement.mozRequestFullScreen)
         {
@@ -33,7 +33,7 @@ function toggleFullScreen() {
             canvas.width = screen.width;
             canvas.height = screen.height;
             alert(canvas.width);
-            init();
+
 
         } else if (document.documentElement.webkitRequestFullScreen)
         {
@@ -41,7 +41,7 @@ function toggleFullScreen() {
             canvas.width = screen.width;
             canvas.height = screen.height;
             alert(canvas.width);
-            init();
+
         }
     } else {
         if (document.cancelFullScreen)
