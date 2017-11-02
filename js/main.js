@@ -14,22 +14,31 @@ function init() {
 }
 
 function toggleFullScreen() {
+    var canvas = document.getElementById("game_canvas");
     if ((document.fullScreenElement && document.fullScreenElement !== null) ||
         (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-        if (document.documentElement.requestFullScreen) {
-            document.documentElement.requestFullScreen();
-        } else if (document.documentElement.mozRequestFullScreen) {
-            document.documentElement.mozRequestFullScreen();
-        } else if (document.documentElement.webkitRequestFullScreen) {
-            document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+        if (document.documentElement.requestFullScreen)
+        {
+
+            //document.documentElement.requestFullScreen();
+            canvas.requestFullScreen()
+        } else if (document.documentElement.mozRequestFullScreen)
+        {
+            canvas.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullScreen)
+        {
+            canvas.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
         }
     } else {
-        if (document.cancelFullScreen) {
-            document.cancelFullScreen();
-        } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-        } else if (document.webkitCancelFullScreen) {
-            document.webkitCancelFullScreen();
+        if (document.cancelFullScreen)
+        {
+            canvas.cancelFullScreen();
+        } else if (document.mozCancelFullScreen)
+        {
+            canvas.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen)
+        {
+            canvas.webkitCancelFullScreen();
         }
     }
 }
