@@ -4,7 +4,6 @@
 
 function init() {
     // code here.
-    while(1) {
         var stage = new createjs.Stage("game_canvas");
         var circle = new createjs.Shape();
         circle.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, 50);
@@ -12,7 +11,6 @@ function init() {
         circle.y = 100;
         stage.addChild(circle);
         stage.update();
-    }
 }
 
 function toggleFullScreen() {
@@ -27,6 +25,7 @@ function toggleFullScreen() {
             canvas.width = screen.width;
             canvas.height = screen.height;
             alert(canvas.width);
+            init();
 
         } else if (document.documentElement.mozRequestFullScreen)
         {
@@ -34,6 +33,7 @@ function toggleFullScreen() {
             canvas.width = screen.width;
             canvas.height = screen.height;
             alert(canvas.width);
+            init();
 
         } else if (document.documentElement.webkitRequestFullScreen)
         {
@@ -41,6 +41,7 @@ function toggleFullScreen() {
             canvas.width = screen.width;
             canvas.height = screen.height;
             alert(canvas.width);
+            init();
         }
     } else {
         if (document.cancelFullScreen)
@@ -49,18 +50,21 @@ function toggleFullScreen() {
             canvas.width = 500;
             canvas.height = 375;
             alert(canvas.width);
+            init();
         } else if (document.mozCancelFullScreen)
         {
             canvas.mozCancelFullScreen();
             canvas.width = 500;
             canvas.height = 375;
             alert(canvas.width);
+            init();
         } else if (document.webkitCancelFullScreen)
         {
             canvas.webkitCancelFullScreen();
             canvas.width = 500;
             canvas.height = 375;
             alert(canvas.width);
+            init();
         }
     }
 }
