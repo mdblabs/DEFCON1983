@@ -1,5 +1,4 @@
-## Defcon : 1983
-### One GitHub GameOff Entry
+## One GitHub GameOff Entry
 
 ## Credits
 
