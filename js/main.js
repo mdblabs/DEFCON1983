@@ -24,31 +24,37 @@ function toggleFullScreen() {
 
             //document.documentElement.requestFullScreen();
             canvas.requestFullScreen();
-            canvas.width = document.body.clientWidth;
-            canvas.height = document.body.clientHeight;
+            canvas.width = screen.width;
+            canvas.height = screen.height;
 
         } else if (document.documentElement.mozRequestFullScreen)
         {
             canvas.mozRequestFullScreen();
-            canvas.width = document.body.clientWidth;
-            canvas.height = document.body.clientHeight;
+            canvas.width = screen.width;
+            canvas.height = screen.height;
 
         } else if (document.documentElement.webkitRequestFullScreen)
         {
             canvas.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-            canvas.width = document.body.clientWidth;
-            canvas.height = document.body.clientHeight;
+            canvas.width = screen.width;
+            canvas.height = screen.height;
         }
     } else {
         if (document.cancelFullScreen)
         {
             canvas.cancelFullScreen();
+            canvas.width = 500;
+            canvas.height = 375;
         } else if (document.mozCancelFullScreen)
         {
             canvas.mozCancelFullScreen();
+            canvas.width = 500;
+            canvas.height = 375;
         } else if (document.webkitCancelFullScreen)
         {
             canvas.webkitCancelFullScreen();
+            canvas.width = 500;
+            canvas.height = 375;
         }
     }
 }
