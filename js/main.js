@@ -21,21 +21,21 @@ function toggleFullScreen() {
         {
 
             //document.documentElement.requestFullScreen();
-            canvas.requestFullScreen()
-            canvas.width = document.body.clientWidth;
-            canvas.height = document.body.clientHeight;
+            canvas.requestFullScreen();
+            canvas.width = $(window).width();
+            canvas.height = $(window).height();
 
         } else if (document.documentElement.mozRequestFullScreen)
         {
             canvas.mozRequestFullScreen();
-            canvas.width = document.body.clientWidth;
-            canvas.height = document.body.clientHeight;
+            canvas.width = $(window).width();
+            canvas.height = $(window).height();
 
         } else if (document.documentElement.webkitRequestFullScreen)
         {
             canvas.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-            canvas.width = document.body.clientWidth;
-            canvas.height = document.body.clientHeight;
+            canvas.width = $(window).width();
+            canvas.height = $(window).height();
         }
     } else {
         if (document.cancelFullScreen)
