@@ -6,7 +6,7 @@ function init() {
     // code here.
 
 
-    var stage = new createjs.Stage("demoCanvas");
+    var stage = new createjs.Stage("game_canvas");
     var circle = new createjs.Shape();
     circle.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, 50);
     circle.x = 100;
@@ -16,5 +16,5 @@ function init() {
 }
 
 $('#toggle').click(function () {
-    screenfull.toggle($('#demoCanvas')[0]);
+    screenfull.toggle($('#game_canvas')[0]);
 });
