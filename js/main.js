@@ -48,8 +48,6 @@ function toggleFullScreen() {
             canvas.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
             canvas.width = screen.width;
             canvas.height = screen.height;
-            alert(canvas.width);
-
         }
     } else {
         if (document.cancelFullScreen)
