@@ -41,7 +41,6 @@ function toggleFullScreen() {
             canvas.mozRequestFullScreen();
             canvas.width = screen.width;
             canvas.height = screen.height;
-            alert(canvas.width);
 
 
         } else if (document.documentElement.webkitRequestFullScreen)
