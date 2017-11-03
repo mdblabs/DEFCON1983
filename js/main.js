@@ -9,7 +9,7 @@ window.addEventListener('resize', resize, false);
 
 function init() {
     // code here.
-    var stage = new createjs.Stage("game_canvas");
+    stage = new createjs.Stage("game_canvas");
 
     createBackground();
     createjs.Ticker.addListener(this);
