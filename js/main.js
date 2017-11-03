@@ -79,6 +79,6 @@ function resize() {
     stage.canvas.height = window.innerHeight;
 
     bg.graphics.clear()
-    bg.graphics.beginFill("#222").drawRect(0,0,stage.canvas.width,stage.canvas.height);
+    bg.graphics.beginFill("red").drawRect(0,0,stage.canvas.width,stage.canvas.height);
 
 }
