@@ -12,7 +12,7 @@ function init(){
     stage = new createjs.Stage("game_canvas");
 
     createBackground();
-    createjs.Ticker.addListener(this);
+    createjs.Ticker.addEventListener(this);
 
     resize();
 }
