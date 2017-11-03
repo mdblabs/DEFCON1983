@@ -34,7 +34,6 @@ function toggleFullScreen() {
             canvas.requestFullScreen();
             canvas.width = screen.width;
             canvas.height = screen.height;
-            alert(canvas.width);
 
 
         } else if (document.documentElement.mozRequestFullScreen)
@@ -59,22 +58,16 @@ function toggleFullScreen() {
             canvas.cancelFullScreen();
             canvas.width = 500;
             canvas.height = 375;
-            alert(canvas.width);
-            init();
         } else if (document.mozCancelFullScreen)
         {
             canvas.mozCancelFullScreen();
             canvas.width = 500;
             canvas.height = 375;
-            alert(canvas.width);
-            init();
         } else if (document.webkitCancelFullScreen)
         {
             canvas.webkitCancelFullScreen();
             canvas.width = 500;
             canvas.height = 375;
-            alert(canvas.width);
-            init();
         }
     }
 }
