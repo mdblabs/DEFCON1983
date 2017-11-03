@@ -13,7 +13,7 @@ function init(){
 
     createBackground();
     createjs.Ticker.addEventListener(this);
-
+    alert("Test");
     resize();
 }
 
