@@ -7,7 +7,7 @@ var bg;
 
 window.addEventListener('resize', resize, false);
 
-function init() {
+function init(){
     // code here.
     stage = new createjs.Stage("game_canvas");
 
