@@ -2,16 +2,26 @@
  * Created by mariano on 2/11/17.
  */
 
+var stage;
+var bg;
+
+window.addEventListener('resize', resize, false);
+
 function init() {
     // code here.
-        var stage = new createjs.Stage("game_canvas");
-        var circle = new createjs.Shape();
-        circle.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, 50);
-        circle.x = 100;
-        circle.y = 100;
-        stage.addChild(circle);
-        stage.update();
+    var stage = new createjs.Stage("game_canvas");
+
+    createBackground();
+    createjs.Ticker.addListener(this);
+
+    resize();
 }
+
+function createBackground() {
+    bg = new createjs.Shape();
+    stage.addChild(bg);
+}
+
 
 function toggleFullScreen() {
     var canvas = document.getElementById("game_canvas");
@@ -67,4 +77,18 @@ function toggleFullScreen() {
             init();
         }
     }
+}
+
+
+function tick() {
+    stage.update();
+}
+
+function resize() {
+    stage.canvas.width = window.innerWidth;
+    stage.canvas.height = window.innerHeight;
+
+    bg.graphics.clear()
+    bg.graphics.beginFill("#222").drawRect(0,0,stage.canvas.width,stage.canvas.height);
+
 }
