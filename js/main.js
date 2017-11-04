@@ -2,12 +2,6 @@
  * Created by mariano on 2/11/17.
  */
 
-var KEYCODE_LEFT = 37,
-    KEYCODE_RIGHT = 39,
-    KEYCODE_UP = 38,
-    KEYCODE_DOWN = 40,
-    KEYBOARD_ESC = 27;
-
 var stage;
 var bg;
 var fg;
