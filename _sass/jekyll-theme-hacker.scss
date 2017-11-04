@@ -232,3 +232,7 @@ a {
 .cf {
   zoom:1;
 }
+
+#game_canvas:-webkit-full-screen{
+  height: 100%;
+}

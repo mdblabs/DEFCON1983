@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
 	  <head>
-		      <meta charset='utf-8'>
+          <meta charset='utf-8'>
 		          <meta http-equiv="X-UA-Compatible" content="chrome=1">
 			      <meta name="viewport" content="width=device-width, initial-scale=1">
 			          <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
 				  {% seo %}
+                    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
 				    </head>
 
 				      <body onload="init();">
@@ -22,14 +23,15 @@
                               </header>
 
                               <div class="container">
+                                  <div style="text-align:center;">
+                                      <button id="fson" class="btn btn-github" onclick="fullscreenON()">Fullscreen</button>
+                                      <p></p>
+                                  </div>
+                              </div>
+
+                              <div class="container">
                                   <section id="canvas_content" style="text-align: center;">
                                       <canvas id="game_canvas" width="500" height="375"></canvas>
-                                      <div style="text-align:center;">
-                                          <button id="toggle" class="btn btn-github" onclick="toggleFullScreen()">Full Screen</button>
-                                      </div>
-                                  </section>
-                                  <section id="main_content">
-                                      {{ content }}
                                   </section>
                               </div>
 
