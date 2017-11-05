@@ -3,31 +3,31 @@
  */
 
 var stage;
-var bg;
-var fg;
+
 var text;
 var tFly;
 
 var canvas;
 var wOriginal = 500;
 var hOriginal = 375;
-var reload = false;
+
+
+var MainDisplay;
 
 function init(){
     // code here.
 
     canvas = document.getElementById("game_canvas");
     stage = new createjs.Stage("game_canvas");
-    createBackground();
+    setup();
 
-    createjs.Ticker.addEventListener("tick",ticUpdate);
+    createjs.Ticker.addEventListener("tick",draw);
 
 }
 
-function createBackground() {
+function setup() {
 
-    bg = new createjs.Shape();
-    fg = new createjs.Shape();
+    /*
     text = new createjs.Text();
     tFly = new createjs.Text();
 
@@ -38,19 +38,27 @@ function createBackground() {
     tFly.color = "#ade67e";
     text.x = 5;
     text.y = 5;
-    text.text = "DEFCON : 1983";
-    tFly.text = String.fromCharCode(9611);
+
     //Ancho del texto:11
     tFly.x = 141;
     tFly.y = 9;
 
     //bg.graphics.clear()
     //bg.graphics.beginFill("black").drawRect(0,0,stage.canvas.width,stage.canvas.height);
+    */
+    MainDisplay = new Display(0,0,wOriginal,hOriginal);
 
-    stage.addChild(bg);
-    stage.addChild(fg);
-    stage.addChild(text);
-    stage.addChild(tFly);
+    var props = Object.getOwnPropertyNames(MainDisplay).sort();
+
+    for (var i = 0;i<props.length;i++)
+    {
+        if (props[i][0]=='s')
+        {
+            stage.addChild(MainDisplay[props[i]]);
+        }
+    }
+
+
 }
 
 
@@ -77,11 +85,8 @@ function fullscreenON() {
 
 
 }
-function fullscreenOFF()
-{
-}
 
-function ticUpdate(){
+function draw(){
 
 
     canvas = document.getElementById("game_canvas");
@@ -97,13 +102,7 @@ function ticUpdate(){
         canvas.width = screen.width;
         canvas.height = screen.height;
     }
-    bg.graphics.clear();
-    fg.graphics.clear();
 
-    bg.graphics.beginFill("black").drawRect(0,0,canvas.width,canvas.height);
-    fg.graphics.setStrokeStyle(2).beginStroke("#ade67e").drawRect(0,0,canvas.width,canvas.height);
-
-
-
+    MainDisplay.draw();
     stage.update();
 }
