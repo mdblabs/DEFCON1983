@@ -9,6 +9,7 @@ var canvas;
 var wOriginal = 500;
 var hOriginal = 375;
 
+var defcon;
 
 var MainDisplay;
 var DefconDisplay;
@@ -27,9 +28,10 @@ function init(){
 function setup() {
 
     MainDisplay = new Display(0,0,wOriginal,hOriginal);
-    DefconDisplay = new DefconDisp(wOriginal-52,hOriginal/2-50,25,100);
-
+    DefconDisplay = new DefconDisp(wOriginal-52,hOriginal/2-50,30,120);
     DefconDisplay.setup();
+
+    defcon = 0;
 
 
     props = Object.getOwnPropertyNames(MainDisplay).sort();
