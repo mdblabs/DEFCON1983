@@ -4,8 +4,6 @@
 
 var stage;
 
-var text;
-var tFly;
 
 var canvas;
 var wOriginal = 500;
@@ -13,6 +11,7 @@ var hOriginal = 375;
 
 
 var MainDisplay;
+var DefconDisplay;
 
 function init(){
     // code here.
@@ -27,28 +26,13 @@ function init(){
 
 function setup() {
 
-    /*
-    text = new createjs.Text();
-    tFly = new createjs.Text();
-
-    text.font = "24px VT323";
-    tFly.font = "18px VT323";
-
-    text.color = "#ade67e";
-    tFly.color = "#ade67e";
-    text.x = 5;
-    text.y = 5;
-
-    //Ancho del texto:11
-    tFly.x = 141;
-    tFly.y = 9;
-
-    //bg.graphics.clear()
-    //bg.graphics.beginFill("black").drawRect(0,0,stage.canvas.width,stage.canvas.height);
-    */
     MainDisplay = new Display(0,0,wOriginal,hOriginal);
+    DefconDisplay = new DefconDisp(wOriginal-52,hOriginal/2-50,25,100);
 
-    var props = Object.getOwnPropertyNames(MainDisplay).sort();
+    DefconDisplay.setup();
+
+
+    props = Object.getOwnPropertyNames(MainDisplay).sort();
 
     for (var i = 0;i<props.length;i++)
     {
@@ -57,6 +41,19 @@ function setup() {
             stage.addChild(MainDisplay[props[i]]);
         }
     }
+
+    props = Object.getOwnPropertyNames(DefconDisplay).sort();
+    console.log(props);
+    for (var i = 0;i<props.length;i++)
+    {
+        if (props[i][0]=='s')
+        {
+            //console.log("Added: "+ props[i]);
+            stage.addChild(DefconDisplay[props[i]]);
+        }
+    }
+    console.log(stage);
+    //DefconDisplay.setup();
 
 
 }
@@ -104,5 +101,6 @@ function draw(){
     }
 
     MainDisplay.draw();
+    DefconDisplay.draw();
     stage.update();
 }
