@@ -94,13 +94,13 @@ class DefconDisp extends Display
             var defh =(this.y + this.h) - (i+1)*this.defH;
 
             switch(i) {
-                case 0:
+                case 4
                     if (i==this.currentDef)
                         color = "#0000FF";
                     else
                         color = "#000077";
                     break;
-                case 1:
+                case 3
                     if (i==this.currentDef)
                         color = "#00FF00";
                     else
@@ -112,13 +112,13 @@ class DefconDisp extends Display
                     else
                         color = "#777700";
                     break;
-                case 3:
+                case 1
                     if(i==this.currentDef)
                         color = "#FF0000";
                     else
                         color = "#770000";
                     break;
-                case 4:
+                case 0
                     if(i==this.currentDef)
                         color = "#FFFFFF";
                     else
