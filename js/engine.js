@@ -103,7 +103,7 @@ class DefconDisp extends Display
                         color = "#000077";
                     break;
                 case 3:
-                    if (i==this.currentDef) {
+                    if (i==this.currentDef){
                         color = "#00FF00";
                         this.sText.color="#000000";
                     }
@@ -120,6 +120,7 @@ class DefconDisp extends Display
                     break;
                 case 1:
                     if(i==this.currentDef) {
+                    if(i==this.currentDef)
                         color = "#FF0000";
                         this.sText.color = "#000000";
                     }
