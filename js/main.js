@@ -28,7 +28,7 @@ function init(){
 function setup() {
 
     MainDisplay = new Display(0,0,wOriginal,hOriginal);
-    DefconDisplay = new DefconDisp(wOriginal-52,hOriginal/2-50,20,75);
+    DefconDisplay = new DefconDisp(wOriginal-52,hOriginal/2-50,20,62);
     DefconDisplay.setup();
 
     defcon = 0;

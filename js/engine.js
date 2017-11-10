@@ -69,7 +69,7 @@ class DefconDisp extends Display
 
     setup()
     {
-        this.setDefcon(1);
+        this.setDefcon(5);
     }
 
     setDefcon(def) {
@@ -83,7 +83,6 @@ class DefconDisp extends Display
     }
 
     draw() {
-        console.log(this.getLines());
         this.sBg.graphics.clear();
         this.sFg.graphics.clear();
         this.defH = this.h / 5;
@@ -137,7 +136,7 @@ class DefconDisp extends Display
             }
             this.sBg.graphics.beginFill(color).drawRect(this.x, defh, this.w, this.defH);
         }
-        this.setText(this.currentDef+1,2*this.currentDef,0.75);
+        this.setText(this.currentDef+1,this.currentDef,0.75);
 
         this.sFg.graphics.setStrokeStyle(1).beginStroke("#ade67e").drawRect(this.x, this.y, this.w, this.h);
 
