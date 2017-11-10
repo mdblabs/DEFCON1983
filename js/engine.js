@@ -31,10 +31,11 @@ class Display{
         this.sBg.graphics.clear();
         this.sFg.graphics.clear();
 
+        this.sText.size
         this.setText("DEFCON",9,43);
 
         this.sBg.graphics.beginFill("black").drawRect(this.x,this.y,this.w,this.h);
-        this.sFg.graphics.setStrokeStyle(2).beginStroke("#ade67e").drawRect(this.x,this.y,this.w,this.h);
+        this.sFg.graphics.setStrokeStyle(1).beginStroke("#ade67e").drawRect(this.x,this.y,this.w,this.h);
         //console.log(this.sBg);
     }
 
@@ -69,12 +70,12 @@ class DefconDisp extends Display
 
     setup()
     {
-        this.currentDef = 4;
+        this.setDefcon(5);
     }
 
     setDefcon(def) {
-        if(def<5)
-            this.currentDef = def;
+        if(def<6)
+            this.currentDef = def-1;
     }
 
     setFocus()
@@ -84,54 +85,61 @@ class DefconDisp extends Display
 
     draw() {
         console.log(this.getLines());
-
         this.sBg.graphics.clear();
         this.sFg.graphics.clear();
         this.defH = this.h / 5;
 
         for (var i = 0; i <= 4;i++) {
             var color;
-            var defh =(this.y + this.h) - (i+1)*this.defH;
+            var defh =this.y + i*this.defH;
 
             switch(i) {
-                case 0:
-                    if (i==this.currentDef)
+                case 4:
+                    if (i==this.currentDef) {
                         color = "#0000FF";
+                        this.sText.color="#FFFFFF";
+                    }
                     else
                         color = "#000077";
                     break;
-                case 1:
-                    if (i==this.currentDef)
+                case 3:
+                    if (i==this.currentDef) {
                         color = "#00FF00";
+                        this.sText.color="#000000";
+                    }
                     else
                         color = "#007700";
                     break;
                 case 2:
-                    if(i==this.currentDef)
+                    if(i==this.currentDef) {
                         color = "#FFFF00";
+                        this.sText.color="#000000";
+                    }
                     else
                         color = "#777700";
                     break;
-                case 3:
-                    if(i==this.currentDef)
+                case 1:
+                    if(i==this.currentDef) {
                         color = "#FF0000";
+                        this.sText.color = "#000000";
+                    }
                     else
                         color = "#770000";
                     break;
-                case 4:
-                    if(i==this.currentDef)
+                case 0:
+                    if(i==this.currentDef) {
                         color = "#FFFFFF";
+                        this.sText.color = "#000000";
+                    }
                     else
                         color = "#777777";
                     break;
             }
             this.sBg.graphics.beginFill(color).drawRect(this.x, defh, this.w, this.defH);
         }
-        this.setText(this.currentDef+1,8-2*this.currentDef,1);
-        this.currentDef++;
-        if (this.currentDef==5)
-            this.currentDef = 0;
-        this.sFg.graphics.setStrokeStyle(2).beginStroke("#ade67e").drawRect(this.x, this.y, this.w, this.h);
+        this.setText(this.currentDef+1,2*this.currentDef,1);
+
+        this.sFg.graphics.setStrokeStyle(1).beginStroke("#ade67e").drawRect(this.x, this.y, this.w, this.h);
 
     }
 }
