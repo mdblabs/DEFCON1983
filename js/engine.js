@@ -18,7 +18,7 @@ class Display{
 
         //TODO:altura de las lineas a fuego
         //TODO: matriz de textos por cada linea
-        this.sText.font = "24px VT323";
+        this.sText.font = "14px VT323";
         this.sText.color = "#ade67e";
         this.lines = Math.floor(this.h / lineh);
         this.rows = Math.floor(this.w / charw);
@@ -31,8 +31,7 @@ class Display{
         this.sBg.graphics.clear();
         this.sFg.graphics.clear();
 
-        this.sText.size
-        this.setText("DEFCON",9,43);
+        this.setText("DEFCON",10,44);
 
         this.sBg.graphics.beginFill("black").drawRect(this.x,this.y,this.w,this.h);
         this.sFg.graphics.setStrokeStyle(1).beginStroke("#ade67e").drawRect(this.x,this.y,this.w,this.h);
@@ -70,7 +69,7 @@ class DefconDisp extends Display
 
     setup()
     {
-        this.setDefcon(5);
+        this.setDefcon(1);
     }
 
     setDefcon(def) {
@@ -138,7 +137,7 @@ class DefconDisp extends Display
             }
             this.sBg.graphics.beginFill(color).drawRect(this.x, defh, this.w, this.defH);
         }
-        this.setText(this.currentDef+1,2*this.currentDef,1);
+        this.setText(this.currentDef+1,2*this.currentDef,0.75);
 
         this.sFg.graphics.setStrokeStyle(1).beginStroke("#ade67e").drawRect(this.x, this.y, this.w, this.h);
 
