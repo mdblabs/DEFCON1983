@@ -15,6 +15,7 @@ class Display{
         this.sBg = new createjs.Shape();
         this.sFg = new createjs.Shape();
         this.sText = new createjs.Text();
+        this.sBgImage = new createjs.Bitmap();
 
         //TODO:altura de las lineas a fuego
         //TODO: matriz de textos por cada linea
@@ -26,12 +27,18 @@ class Display{
         this.focus = false;
     }
 
+    setup()
+    {
+
+    }
+
     draw()
     {
         this.sBg.graphics.clear();
         this.sFg.graphics.clear();
 
         this.setText("DEFCON",10,44);
+
 
         this.sBg.graphics.beginFill("black").drawRect(this.x,this.y,this.w,this.h);
         this.sFg.graphics.setStrokeStyle(1).beginStroke("#ade67e").drawRect(this.x,this.y,this.w,this.h);
@@ -141,4 +148,15 @@ class DefconDisp extends Display
         this.sFg.graphics.setStrokeStyle(1).beginStroke("#ade67e").drawRect(this.x, this.y, this.w, this.h);
 
     }
+}
+
+class Map {
+    constructor(x,y,image_url){
+        this.sBackground = new createjs.Bitmap(image_url);
+        this.sBackground.x = x;
+        this.sBackground.y = y;
+        this.sBackground.scaleX=1/1.90;
+        this.sBackground.scaleY=1/1.65;
+    }
+
 }

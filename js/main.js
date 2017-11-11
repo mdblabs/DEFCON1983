@@ -12,6 +12,7 @@ var hOriginal = 375;
 var defcon;
 
 var MainDisplay;
+var MainMap;
 var DefconDisplay;
 
 function init(){
@@ -28,6 +29,7 @@ function init(){
 function setup() {
 
     MainDisplay = new Display(0,0,wOriginal,hOriginal);
+    MainMap = new Map(0,0,"assets/images/world.svg");
     DefconDisplay = new DefconDisp(wOriginal-52,hOriginal/2-50,20,62);
     DefconDisplay.setup();
 
@@ -44,8 +46,19 @@ function setup() {
         }
     }
 
+    props = Object.getOwnPropertyNames(MainMap).sort();
+    //console.log(props);
+    for (var i = 0;i<props.length;i++)
+    {
+        if (props[i][0]=='s')
+        {
+            //console.log("Added: "+ props[i]);
+            stage.addChild(MainMap[props[i]]);
+        }
+    }
+
     props = Object.getOwnPropertyNames(DefconDisplay).sort();
-    console.log(props);
+    //console.log(props);
     for (var i = 0;i<props.length;i++)
     {
         if (props[i][0]=='s')
@@ -54,7 +67,10 @@ function setup() {
             stage.addChild(DefconDisplay[props[i]]);
         }
     }
-    console.log(stage);
+
+
+
+    //console.log(stage);
     //DefconDisplay.setup();
 
 
@@ -105,4 +121,5 @@ function draw(){
     MainDisplay.draw();
     DefconDisplay.draw();
     stage.update();
+
 }
